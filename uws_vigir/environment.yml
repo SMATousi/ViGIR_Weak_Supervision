@@ -1,0 +1,22 @@
+name: uws
+channels:
+  - anaconda
+  - conda-forge
+  - defaults
+dependencies:
+  - pytorch::pytorch=1.6.0
+  - python=3.6.8
+  - jupyter
+  - pandas
+  - scipy
+  - scikit-learn
+  - tqdm
+  - munkres
+  - networkx
+  - pyyaml
+  - matplotlib
+  - pip
+  - pip:
+    - geoopt
+    - pgmpy
+    - flyingsquid

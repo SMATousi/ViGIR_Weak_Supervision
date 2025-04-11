@@ -1,0 +1,15 @@
+beautifulsoup4==4.9.3
+ipywidgets==7.6.3
+jupyterlab
+lime==0.2.0.1
+matplotlib==3.5.0
+numpy==1.19.2
+optuna==2.8.0
+pandas==1.2.2
+scikit_learn==0.23.2
+scipy==1.6.1
+sentence_transformers
+snorkel==0.9.7
+tqdm==4.46.0
+yake==0.4.8
+gdown

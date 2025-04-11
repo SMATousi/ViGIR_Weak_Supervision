@@ -1,0 +1,263 @@
+data_conf:
+  dataset_name: movies
+  dimension: 5
+  features:
+  - ' Black and White'
+  - Color
+  - unknown:color
+  - love
+  - murder
+  - friend
+  - death
+  - police
+  - high school
+  - new york city
+  - alien
+  - fbi
+  - boy
+  - school
+  - revenge
+  - drugs
+  - prison
+  - escape
+  - dog
+  - friendship
+  - money
+  - party
+  - scientist
+  - serial killer
+  - detective
+  - marriage
+  - wedding
+  - island
+  - sex
+  - teenager
+  - lawyer
+  - rescue
+  - christmas
+  - cia
+  - best friend
+  - future
+  - Approved
+  - G
+  - GP
+  - M
+  - NC-17
+  - Not Rated
+  - PG
+  - PG-13
+  - R
+  - Unrated
+  - X
+  - unknown:content_rating
+  - missing_homepage
+  - duringcreditsstinger
+  - woman_director
+  - independent_film
+  - based_on_novel
+  - aftercreditsstinger
+  - murder.1
+  - violence
+  - dystopia
+  - revenge.1
+  - sport
+  - 3d
+  - friendship.1
+  - teenager.1
+  - sex.1
+  - musical
+  - biography
+  - new_york
+  - sequel
+  - los_angeles
+  - high_school
+  - police.1
+  - suspense
+  - love.1
+  - alien.1
+  - family
+  - prison.1
+  - london_england
+  - superhero
+  - nudity
+  - drug
+  - dying_and_death
+  - father_son_relationship
+  - remake
+  - serial_killer
+  - magic
+  - escape.1
+  - daughter
+  - world_war_ii
+  - based_on_comic_book
+  - wedding.1
+  - kidnapping
+  - time_travel
+  - fbi.1
+  - corruption
+  - af
+  - cs
+  - da
+  - en
+  - es
+  - fr
+  - he
+  - hu
+  - is
+  - it
+  - nl
+  - th
+  - warner_bros_
+  - universal_pictures
+  - paramount_pictures
+  - twentieth_century_fox_film_corporation
+  - columbia_pictures
+  - new_line_cinema
+  - touchstone_pictures
+  - walt_disney_pictures
+  - relativity_media
+  - metro_goldwyn_mayer__mgm_
+  - columbia_pictures_corporation
+  - miramax_films
+  - village_roadshow_pictures
+  - dreamworks_skg
+  - regency_enterprises
+  - united_artists
+  - fox_searchlight_pictures
+  - dune_entertainment
+  - count_production_countries
+  - year
+  - Apr
+  - Aug
+  - Dec
+  - Feb
+  - Jan
+  - Jul
+  - Jun
+  - Mar
+  - May
+  - Nov
+  - Oct
+  - Sep
+  - Fri
+  - Mon
+  - Sat
+  - Sun
+  - Thu
+  - Tue
+  - Wed
+  - count_spoken_langueges
+  - Released
+  - Robert De Niro
+  - Morgan Freeman
+  - Bruce Willis
+  - Johnny Depp
+  - Matt Damon
+  - Nicolas Cage
+  - Steve Buscemi
+  - Liam Neeson
+  - Denzel Washington
+  - Brad Pitt
+  - Bill Murray
+  - J.K. Simmons
+  - Tom Cruise
+  - Will Ferrell
+  - Harrison Ford
+  - Tom Hanks
+  - Jim Broadbent
+  - Anthony Hopkins
+  - Sylvester Stallone
+  - James Franco
+  - Julia Roberts
+  - Action
+  - Adventure
+  - Animation
+  - Biography
+  - Comedy
+  - Crime
+  - Documentary
+  - Drama
+  - Family
+  - Fantasy
+  - History
+  - Horror
+  - Music
+  - Musical
+  - Mystery
+  - Romance
+  - Sci-Fi
+  - Sport
+  - Thriller
+  - War
+  - Western
+  - num_critic_for_reviews
+  - duration
+  - director_facebook_likes
+  - gross
+  - num_voted_users
+  - cast_total_facebook_likes
+  - facenumber_in_poster
+  - num_user_for_reviews
+  - budget
+  - title_year
+  - aspect_ratio
+  - movie_facebook_likes
+  - popularity
+  - revenue
+  - runtime
+  - vote_average
+  - vote_count
+  - actor_facebook_likes
+  highest_first: true
+  label_feature: vote_average
+  n_test: 1000
+  n_train: 500
+  processed_data_path: data/processed/movies/movies_example
+  project_root: ../../
+  raw_data_path: data/movies.csv
+  recreate_if_exists: true
+  seed: 0
+l2r_training_conf:
+  debug: true
+  epochs: 5
+  learning_rate: 0.01
+  model: ListMLE
+  model_checkpoint: tmp/checkpoints/movies_example
+  optimizer: sgd
+  test_batch_size: 64
+  train_batch_size: 64
+  use_weak_labels: true
+  weight_decay: 0.0001
+log_file: tmp/logs/movies_example.log
+project_root: ../../
+results_path: tmp/results/movies
+weak_sup_conf:
+  checkpoint_path: data/processed/movies_example/LFs
+  inference_rule: weighted_kemeny
+  lf_features:
+  - revenue
+  - gross
+  - runtime
+  - popularity
+  - movie_facebook_likes
+  - cast_total_facebook_likes
+  - num_user_for_reviews
+  - director_facebook_likes
+  - actor_facebook_likes
+  - budget_tmdb
+  lf_features_highest_first_flag:
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  - true
+  num_LFs: 10
+  p: null
+  recreate_if_exists: true
+  seed: 1
+  synthetic: true
+  train_method: triplet_opt
